@@ -1,3 +1,29 @@
-body{
-    background-color: royalblue;
+@import url(reset.css);
+.barra{
+    width: 100vw;
+}
+.barra_conteudo{
+    background-color: rgb(45, 136, 240);
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    color: aliceblue;
+    box-shadow: 2px 4px 50px rgb(243, 10, 10);
+} 
+.btn {
+    background-color: cornsilk;
+   cursor: pointer;
+}
+
+.login button{
+  border-radius: 5px;
+}
+.barra_info{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
 }

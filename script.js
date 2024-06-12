@@ -1,23 +1,28 @@
-const btnTeste = document.querySelector("#btnTeste");
-const escreve = document.querySelector("#textoHeader");
-btnTeste.onclick = () =>{
-    alert("Jesus é meu parceiro!")
-}
-const nome = "DOUGLAS LIBÓRIO!".split("");
+const btn = document.querySelector("#btnlogin");
+const inputUsuario = document.querySelector("#usuario");
+const inputSenha = document.querySelector("#senha");
 
-const escreveNome = (pos)=>{
-    if(pos < nome.length){
-        let saida = "";
-        for(let i=0; i < pos; i++){
-         saida += nome[pos];
-         setTimeout(() => {
-             escreve.innerHTML = saida;
-             pos++;
-             escreveNome(pos);
-            }, 1000);
-        }    
+(()=>{
+    let usuario = localStorage.getItem("usuario");
+    if(usuario){
+        window.location.href = "http://www.uol.com.br";
+    }
+})();
+
+btn.onclick = (e) =>{
+    e.preventDefault();
+    let usuario = inputUsuario.ariaValueMax;
+    let senha = inputSenha.value;
+    if(!usuario && !senha){
+        inputUsuario.focus();
+        return;
+    }
+    if(usuario === "idouglxs"){
+        if(senha === "liborio123"){
+            localStorage.setItem("usuario",usuario);
+            window.location.href = "http://www.uol.com.br";
+        }else{
+            inputUsuario.focus();
+        }
     }
 }
-(()=>{
-   escreveNome(0);
-})();
